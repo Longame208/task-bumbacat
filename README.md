@@ -43,7 +43,7 @@ To modify the searcher query, or change how it uses the local database, open `tw
 The `query` object manages the key parts of the searcher.
 
 ```javascript
-let searchTerm = "#koii";
+let searchTerm = "#420";
 let query = {
     limit: 100, // total number of records to return
     searchTerm: searchTerm, // the keyword to look for
