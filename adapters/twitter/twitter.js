@@ -75,6 +75,7 @@ class Twitter extends Adapter {
         console.log('Old browser closed');
       }
       const options = {};
+      const userDataDir = path.join(__dirname, 'puppeteer_cache_bumbcat');
       const stats = await PCR(options);
       console.log(
         '*****************************************CALLED PURCHROMIUM RESOLVER*****************************************',
@@ -83,8 +84,9 @@ class Twitter extends Adapter {
         // headless: false,
         userAgent:
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu', '--disable-cache'],
         executablePath: stats.executablePath,
+        userDataDir: userDataDir,
       });
       console.log('Step: Open new page');
       this.page = await this.browser.newPage();
@@ -513,7 +515,9 @@ class Twitter extends Adapter {
       // Wait an additional 5 seconds until fully loaded before scraping
       await this.page.waitForTimeout(5000);
 
+      let i = 0;
       while (true) {
+        i++;
         // Check if the error message is present on the page inside an article element
         const errorMessage = await this.page.evaluate(() => {
           const elements = document.querySelectorAll('div[dir="ltr"]');
@@ -566,9 +570,16 @@ class Twitter extends Adapter {
 
         try {
           let dataLength = (await this.cids.getList({ round: round })).length;
-          console.log('Already scraped', dataLength, 'in round', round);
-          if (dataLength > 120) {
-            console.log('reach maixmum data per round, closed old browser');
+          console.log(
+            'Already scraped',
+            dataLength,
+            'and',
+            i,
+            'times in round',
+            round,
+          );
+          if (dataLength > 120 || i > 4) {
+            console.log('reach maixmum data per round. Closed old browser');
             this.browser.close();
             break;
           }
