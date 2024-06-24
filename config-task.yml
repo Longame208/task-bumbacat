@@ -45,7 +45,7 @@ requirementsTags:
     description: 'The password of your volunteer Twitter account.'
   - type: TASK_VARIABLE
     value: 'TWITTER_PHONE'
-    description: 'If verification is required, will use your phone number to login.'
+    description: 'If verification is required, will use your phone number or email to login.'
   - type: CPU
     value: '4-core'
   - type: RAM
@@ -56,7 +56,7 @@ requirementsTags:
 # OPTIONAL variables variables for creating task / REQUIRED variables for update task
 
 # OPTIONAL Only provide the taskId if you are updating the task otherwise leave blank
-task_id: '3oiix7GmKC65XwrWGHy7nf8qwmooiBoKJCEK84NtnhTU'
+task_id: 'DjfQQ7RSVPoSRxsVjNaLJe2qntY1BUbtkGm7LCSQQDiC'
 
 # Provide the description for changes made in new version of task
-migrationDescription: 'Fix the puppeteer issue.'
+migrationDescription: 'Fix the puppeteer issue. Fix the submission issue.'
