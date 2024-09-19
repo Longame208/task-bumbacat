@@ -1,9 +1,10 @@
 # Name and metadata of your task
 task_name: '#420 Twitter'
 author: 'Moonsurf'
-description: "Tracks #420 on twitter. It's a good idea to use a secondary Twitter account for this project to maintain the smooth functioning of your main account. Note: This task doesn't issue KOII as a reward. Run the task and get ready to receive the KPL token as a reward!"
+description: "Tracks #420 on twitter. It's a good idea to use a secondary Twitter account for this project to maintain the smooth functioning of your main account. Note: This task issue BIRD as a reward."
 repositoryUrl: 'bumbacatcoin.xyz'
 imageUrl: 'https://bumbacatcoin.xyz/bumbacat_lit.png'
+infoUrl: 'https://www.koii.network/ocean'
 
 # network value can be DEVELOPMENT , ARWEAVE or IPFS, Recommended IPFS when deploying to testnet as the cli automatically takes care of uploading the executable with the help of web3.js key
 task_executable_network: 'IPFS'
@@ -17,21 +18,27 @@ round_time: 4500
 audit_window: 1600
 submission_window: 1600
 
-# Amounts in KOII
+# Task Bounty Type: KOII, KPL
+task_type: 'KPL'
 
+# OPTIONAL (ONLY IF Task Type = KPL) : Token Mint Address, BIRD Token as an example here. 
+token_type: "us8mD4jGkFWnUuAHB8V5ZcrAosEqi2h1Zcyca68QA1G"
+
+
+# Amounts in KOII
 minimum_stake_amount: 1.9
 
 # total_bounty_amount cannot be grater than bounty_amount_per_round
 # total bounty is not accepted in case of update task
-total_bounty_amount: 100000
+total_bounty_amount: 3000000
 
-bounty_amount_per_round: 0.001
+bounty_amount_per_round: 3000
 
 #Number of times allowed to re-submit the distribution  list in case the distribution list is audited
 allowed_failed_distributions: 3
 
 #Space in MBs for the account size, that holds the task data
-space: 5
+space: 3
 
 # Note that the value field in RequirementTag is optional, so it is up to you to include it or not based on your use case.
 # To add more global variables and task variables, please refer the type,value,description format shown below
