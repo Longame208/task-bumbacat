@@ -3,7 +3,7 @@ task_name: '#420 Twitter'
 author: 'Moonsurf'
 description: "Tracks #420 on twitter. It's a good idea to use a secondary Twitter account for this project to maintain the smooth functioning of your main account. Note: This task issue BIRD as a reward."
 repositoryUrl: 'bumbacatcoin.xyz'
-imageUrl: 'https://bumbacatcoin.xyz/bumbacat_lit.png'
+imageUrl: 'https://bafybeif6taxrdgwyuy3m3ulyrcbxwruuf65haffqdnv2xdoesl5zitbdey.ipfs.w3s.link/420_twitter.png'
 infoUrl: 'https://www.koii.network/ocean'
 
 # network value can be DEVELOPMENT , ARWEAVE or IPFS, Recommended IPFS when deploying to testnet as the cli automatically takes care of uploading the executable with the help of web3.js key
