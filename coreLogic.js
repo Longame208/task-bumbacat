@@ -115,10 +115,10 @@ class CoreLogic {
               // slash 70% of the stake as still the audit is triggered but no votes are casted
               // Note that the votes are on the basis of the submission value
               // to do so we need to fetch the stakes of the candidate from the task state
-              const stake_list = taskStakeListJSON.stake_list;
-              const candidateStake = stake_list[candidatePublicKey];
-              const slashedStake = candidateStake * 0.7;
-              distributionList[candidatePublicKey] = -slashedStake;
+              // const stake_list = taskStakeListJSON.stake_list;
+              // const candidateStake = stake_list[candidatePublicKey];
+              // const slashedStake = candidateStake * 0.7;
+              distributionList[candidatePublicKey] = 0;
               // console.log('Candidate Stake', candidateStake);
             } else {
               let numOfVotes = 0;
@@ -131,10 +131,10 @@ class CoreLogic {
                 // slash 70% of the stake as the number of false votes are more than the number of true votes
                 // Note that the votes are on the basis of the submission value
                 // to do so we need to fetch the stakes of the candidate from the task state
-                const stake_list = taskStakeListJSON.stake_list;
-                const candidateStake = stake_list[candidatePublicKey];
-                const slashedStake = candidateStake * 0.7;
-                distributionList[candidatePublicKey] = -slashedStake;
+                // const stake_list = taskStakeListJSON.stake_list;
+                // const candidateStake = stake_list[candidatePublicKey];
+                // const slashedStake = candidateStake * 0.7;
+                distributionList[candidatePublicKey] = 0;
                 // console.log('Candidate Stake', candidateStake);
               }
 
